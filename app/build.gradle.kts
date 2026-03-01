@@ -1,20 +1,23 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
+//    alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
-    id("kotlin-kapt")
+//    id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
+
     kotlin("plugin.serialization") version "2.0.20"
+
 }
 
 android {
-    namespace = "com.example.weather_app"
-    compileSdk = 35
+    namespace = "com.example.weather_now"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.weather_app"
+        applicationId = "com.example.weather_now"
         minSdk = 27
-        targetSdkVersion(rootProject.extra["defaultTargetSdkVersion1"] as Int)
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -34,12 +37,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
     buildFeatures {
         compose = true
     }
@@ -51,7 +54,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    buildToolsVersion = rootProject.extra["buildToolsVersion"] as String
+    buildToolsVersion = "36.0.0"
 }
 
 dependencies {
@@ -73,9 +76,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
-
+    implementation("com.google.dagger:hilt-android:2.59.2")
+//    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.59.2")
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
 // Retrofit with Scalar Converter
