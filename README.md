@@ -1,4 +1,4 @@
-# Weather App 🌤️
+# Weather Now 🌤️
 
 A modern, visually appealing Android Weather Application developed in **Kotlin** using **Jetpack Compose**. It provides precise current weather conditions and hourly forecasts by fetching real-time data based on the user's location.
 
