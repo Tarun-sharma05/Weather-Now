@@ -44,7 +44,7 @@ The app follows Clean Architecture principles allowing changes to be independent
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Tarun-sharma05/Weather-App.git
+   git clone https://github.com/Tarun-sharma05/Weather-Now.git
    ```
 2. Open the project in Android Studio.
 3. Build the project and let Gradle sync all dependencies.
